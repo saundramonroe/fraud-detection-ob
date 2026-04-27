@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & models
+data/*.csv
+models/*.pkl
+
+# Metaflow
+.metaflow/
+
+# Env
+*.yml
+.env
