@@ -1,63 +1,74 @@
 name: fraud-dash-outerbounds
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - python=3.11
-
-  # Data science core
+  # Core data science
   - numpy
   - pandas
   - scipy
   - scikit-learn
   - numba
-  - numexpr
-  - bottleneck
-  - pyarrow
-
-  # ML / explainability
-  - xgboost
-  - shap
   - imbalanced-learn
-
-  # Deep learning / HuggingFace
-  - pytorch
-  - transformers
-  - huggingface_hub
-  - accelerate
-  - datasets
-  - tokenizers
-  - sentencepiece
-  - safetensors
-
   # Visualization
   - matplotlib
   - seaborn
   - plotly
+  - bokeh
   - altair
-
-  # App framework
-  - streamlit
-
-  # Jupyter
+  # ML / DL
+  - pytorch
+  - xgboost
+  - shap
+  - accelerate
+  # HuggingFace ecosystem
+  - transformers
+  - datasets
+  - tokenizers
+  - huggingface_hub
+  - safetensors
+  - sentencepiece
+  # Jupyter / notebooks
   - jupyterlab
   - notebook
+  - ipykernel
   - ipywidgets
-
+  # Web / apps
+  - streamlit
+  - panel
+  # Data / IO
+  - pyarrow
+  - sqlalchemy
+  - boto3
   # Utilities
   - requests
   - httpx
-  - aiohttp
-  - beautifulsoup4
-  - pillow
-  - tqdm
+  - pydantic
+  - pydantic-settings
+  - python-dotenv
   - pyyaml
+  - tqdm
+  - rich
+  - pillow
   - gitpython
-  - cloudpickle
-  - dill
-  - sympy
   - networkx
-
-  #pip install
-  - outerbounds
-
-
+  # Anaconda Toolbox
+  - anaconda-toolbox
+  # Monitoring
+  - sentry-sdk
+  # Pip-only packages
+  - pip
+  - pip:
+      - outerbounds
+      - ob-metaflow
+      - ob-metaflow-extensions
+      - ob-metaflow-stubs
+      - ob-project-utils
+      - metaflow-checkpoint
+      - metaflow-torchrun
+      - durationpy
+      - kubernetes
+      - pylint
+      - isort
+      - tomlkit
