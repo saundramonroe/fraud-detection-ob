@@ -1,0 +1,1 @@
+{"350e69169b34eeba6423bae731ba2f03": {"success": {"bakingStats": null, "containerImage": "fast-bakery.merced.obp.outerbounds.com/default/invigorating-moth:rjur1f2jjr-oci-zstd", "metadata": {"coordinatorImageTag": "v1.25.0-0f50ceaa-1774439538"}, "pythonPath": "/opt/outerbounds/fastbakery/bin/python"}}}
