@@ -53,22 +53,7 @@ dependencies:
   - pillow
   - gitpython
   - networkx
-  # Anaconda Toolbox
-  - anaconda-toolbox
-  # Monitoring
-  - sentry-sdk
   # Pip-only packages
-  - pip
   - pip:
       - outerbounds
-      - ob-metaflow
-      - ob-metaflow-extensions
-      - ob-metaflow-stubs
-      - ob-project-utils
-      - metaflow-checkpoint
-      - metaflow-torchrun
-      - durationpy
-      - kubernetes
-      - pylint
-      - isort
-      - tomlkit
+  
