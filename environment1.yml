@@ -1,0 +1,59 @@
+name: fraud-dash-outerbounds
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  # Core data science
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - numba
+  - imbalanced-learn
+  # Visualization
+  - matplotlib
+  - seaborn
+  - plotlytou
+  - bokeh
+  - altair
+  # ML / DL
+  - pytorch
+  - xgboost
+  - shap
+  - accelerate
+  # HuggingFace ecosystem
+  - transformers
+  - datasets
+  - tokenizers
+  - huggingface_hub
+  - safetensors
+  - sentencepiece
+  # Jupyter / notebooks
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - ipywidgets
+  # Web / apps
+  - streamlit
+  - panel
+  # Data / IO
+  - pyarrow
+  - sqlalchemy
+  - boto3
+  # Utilities
+  - requests
+  - httpx
+  - pydantic
+  - pydantic-settings
+  - python-dotenv
+  - pyyaml
+  - tqdm
+  - rich
+  - pillow
+  - gitpython
+  - networkx
+  # Pip-only packages
+  - pip:
+      - outerbounds
+  

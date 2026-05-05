@@ -86,7 +86,7 @@ class FraudDataPrepFlow(FlowSpec):
     @step
     def end(self):
         print(f"Data Prep Complete: Train {len(self.X_train):,}, Test {len(self.X_test):,}")
-        print(f"Next: python flows/training_flow.py --environment=fast-bakery --with kubernetes run --data_run_id {current.run_id}")
+        print(f"Next: python flows/training_flow.py --environment=fast-bakery --environment=fast-bakery --with kubernetes run --data_run_id {current.run_id}")
 
 if __name__ == "__main__":
     FraudDataPrepFlow()

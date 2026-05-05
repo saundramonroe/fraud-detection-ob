@@ -10,12 +10,13 @@ set -euo pipefail
 #
 # Prerequisites:
 #   - outerbounds CLI installed and authenticated
-#   - Run from the fraud-dash-outerbounds project root
+#   - Run from the fraud-detection-ob project root
 # ============================================================================
 
 APP_NAME="fraud-dashboard"
 PORT=8501
 PYTHON_VERSION="3.11"
+DASHBOARD_FILE="fraud-dash-outerbounds.py"
 
 echo "============================================"
 echo " Fraud Dashboard - Outerbounds Deploy"
@@ -26,8 +27,8 @@ echo ""
 # 1. Verify we're in the right directory
 # ----------------------------------------------------------------------------
 
-if [[ ! -f "app.py" ]]; then
-    echo "ERROR: app.py not found in current directory."
+if [[ ! -f "${DASHBOARD_FILE}" ]]; then
+    echo "ERROR: ${DASHBOARD_FILE} not found in current directory."
     echo "       Run this script from the project root."
     exit 1
 fi
@@ -41,12 +42,17 @@ echo "Project directory: $(pwd)"
 echo ""
 
 # ----------------------------------------------------------------------------
-# 2. Generate requirements.txt from actual imports
-#
-#    The dashboard only needs these five packages at runtime.
-#    Everything else (scikit-learn, xgboost, shap, etc.) lives on the
-#    API server side -- the dashboard calls models over HTTP, it doesn't
-#    load them locally.
+# 2. Create app.py from the dashboard file
+#    The deploy command uses app.py as the entry point.
+# ----------------------------------------------------------------------------
+
+echo "Copying ${DASHBOARD_FILE} -> app.py"
+cp "${DASHBOARD_FILE}" app.py
+echo ""
+
+# ----------------------------------------------------------------------------
+# 3. Generate requirements.txt
+#    scikit-learn is required for model loading and scoring.
 # ----------------------------------------------------------------------------
 
 cat > requirements.txt <<'EOF'
@@ -55,6 +61,7 @@ pandas
 numpy
 plotly
 requests
+scikit-learn
 EOF
 
 echo "Created requirements.txt:"
@@ -62,9 +69,9 @@ cat requirements.txt
 echo ""
 
 # ----------------------------------------------------------------------------
-# 3. Deploy
+# 4. Deploy
 #
-#    --package-suffixes py  includes app.py and src/*.py
+#    --package-suffixes py,csv,pkl,yml includes code, data, models, config
 #    The bash entrypoint works around a known Outerbounds bug where the
 #    code packager strips dots from filenames (app.py -> apppy).
 # ----------------------------------------------------------------------------
@@ -77,7 +84,7 @@ outerbounds app deploy \
     --app-type web \
     --port "${PORT}" \
     --package-src-path . \
-    --package-suffixes py \
+    --package-suffixes py,csv,pkl,yml \
     --cpu 2 \
     --memory 4096 \
     --min-replicas 1 \

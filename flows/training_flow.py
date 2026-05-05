@@ -68,7 +68,7 @@ class FraudTrainingFlow(FlowSpec):
     @step
     def end(self):
         print(f"Training Complete: F1={self.best_metrics['f1']}, AUC={self.best_metrics['auc_roc']}")
-        print(f"Next: python flows/scoring_flow.py --with kubernetes run --training_run_id {current.run_id}")
+        print(f"Next: python flows/scoring_flow.py --environment=fast-bakery --with kubernetes run --training_run_id {current.run_id}")
 
 if __name__ == "__main__":
     FraudTrainingFlow()
