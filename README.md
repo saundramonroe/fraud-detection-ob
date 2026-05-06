@@ -46,3 +46,4 @@ jupyter notebook
 
 ## Related Resources
 - [Anaconda Documentation](https://docs.anaconda.com)
+- Go to docs folder to download the full deployment guide
