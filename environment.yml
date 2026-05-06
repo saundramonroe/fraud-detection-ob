@@ -2,7 +2,6 @@ name: fraud-outerbounds
 channels:
   - defaults
   - conda-forge
-  - https://repo.anaconda.cloud/repo/main-x
 dependencies:
   - decorator=5.2.1=py311hca03da5_0
   - sklearn-compat=0.1.5=py311hca03da5_0
