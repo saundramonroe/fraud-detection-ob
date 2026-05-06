@@ -1,15 +1,8 @@
-name: /Users/smonroe/miniconda3/envs/fraud-dash-outerbounds
+name: fraud-outerbounds
 channels:
   - defaults
   - conda-forge
-  - https://conda.anaconda.org/anaconda-cloud/label/dev
-  - https://conda.anaconda.org/anaconda-cloud
-  - https://repo.anaconda.cloud/repo/rko-demo/main
-  - https://repo.anaconda.cloud/repo/main-x
-  - https://demo.se.sb.anacondaconnect.com/api/repo/smonroe
-  - https://repo.anaconda.com/pkgs/main
-  - https://conda.anaconda.org/services
-  - https://conda.anaconda.org/conda-forge
+
 dependencies:
   - _py-xgboost-mutex=2.0=cpu_1
   - accelerate=1.13.0=pyhcf101f3_0
@@ -405,4 +398,4 @@ dependencies:
       - pylint==4.0.5
       - requests-oauthlib==2.0.0
       - tomlkit==0.14.0
-prefix: //Users/smonroe/miniconda3/envs/fraud-dash-outerbounds
+prefix: //Users/smonroe/miniconda3/envs/fraud-outerbounds
