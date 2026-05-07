@@ -1,0 +1,4 @@
+platform = 'merced.obp.outerbounds.com'
+
+project = 'fraud_detection'
+title = 'Fraud Detection Pipeline'
